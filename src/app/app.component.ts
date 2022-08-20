@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'start-project';
+  text = ""
+
+  setText = (event: Event)=>{
+    this.text = (<HTMLInputElement>event.target).value
+  }
 }
