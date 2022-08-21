@@ -1,18 +1,21 @@
-<li class="todo-list__item">
-  <div class="row mt-4">
-    <div class="col-md-1">
-      <p>{{index}}</p>
+<li class="todo-list__item list-group-item mb-2">
+  <div class="row align-items-center">
+    <div class="col-md-8">
+      <p class="mb-0" [ngClass]="{'todo-is-done' : toDoItem?.isDone}"><span>{{index}}. </span>{{toDoItem?.content}}</p>
     </div>
-    <div class="col-md-9">
-      <p>{{toDoItem?.content}}</p>
-    </div>
-    <div class="col-md-2">
-      <div class="row">
+    <div class="col-md-4">
+      <div class="row align-items-center">
         <div class="col-md-6">
-          <input type="checkbox">
+          <label for="{{index}}" class="me-3 d-inline-block">Mark as done</label>
+          <input type="checkbox" class="form-check-input" id="{{index}}" (change)="setToDoAsDone()">
         </div>
         <div class="col-md-6">
-          <button class="btn btn-danger w-100">Remove</button>
+          <button
+            class="btn w-100"
+            [disabled]="toDoItem?.isDone"
+            [ngClass]="{'btn-primary' : toDoItem?.isDone, 'btn-danger': !toDoItem?.isDone}"
+            (click)="removeToDoFromList()"
+          >{{toDoItem?.isDone ? "Is done" : "Remove"}}</button>
         </div>
       </div>
     </div>

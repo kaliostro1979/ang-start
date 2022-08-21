@@ -14,8 +14,10 @@ export class AppFormComponent {
   todoContent = ""
 
   setToDoItem = (content: string)=>{
-    this.todoContent = content
-    this.itemsArray?.push({content: content, isDone: false})
-    this.todoContent = " "
+    if (content){
+      this.todoContent = content
+      this.itemsArray?.push({content: content, isDone: false})
+      this.todoContent = " "
+    }
   }
 }
