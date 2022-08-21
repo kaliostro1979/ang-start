@@ -8,5 +8,5 @@ import {Component} from "@angular/core";
 
 
 export class AppToDoWrapper {
-
+  items:[{content: string, isDone: boolean}?] = []
 }

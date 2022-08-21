@@ -1,4 +1,10 @@
 <div class="todo-wrapper">
-  <app-form></app-form>
-  <app-item></app-item>
+  <app-form [itemsArray] = "items"></app-form>
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="todo-list">
+        <app-item *ngFor="let item of items; let idx = index" [toDoItem] = "item" [index] = "idx + 1"></app-item>
+      </ul>
+    </div>
+  </div>
 </div>

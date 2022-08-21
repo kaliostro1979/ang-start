@@ -1,4 +1,5 @@
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
+import {Event} from "@angular/router";
 
 @Component({
   selector: "app-form",
@@ -8,11 +9,13 @@ import {Component} from "@angular/core";
 
 
 export class AppFormComponent {
+  @Input() itemsArray?: [{content: string, isDone: boolean}?]
 
-  items:[{content: string, isDone: boolean}?] = []
+  todoContent = ""
 
   setToDoItem = (content: string)=>{
-    this.items.push({content: content, isDone: false})
-    console.log(this.items)
+    this.todoContent = content
+    this.itemsArray?.push({content: content, isDone: false})
+    this.todoContent = " "
   }
 }
