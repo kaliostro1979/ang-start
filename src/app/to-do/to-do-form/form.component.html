@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-md-10">
-    <input type="text" class="form-control" #toDoInput [(ngModel)]="todoContent" (keyup.enter)="setToDoItem(toDoInput.value)">
+    <input type="text" class="form-control" #toDoInput (keyup.enter)="setToDoItem(toDoInput)">
   </div>
   <div class="col-md-2">
-    <button class="btn btn-primary w-100" (click)="setToDoItem(toDoInput.value)">Add to do</button>
+    <button class="btn btn-primary w-100" (click)="setToDoItem(toDoInput)">Add to do</button>
   </div>
 </div>

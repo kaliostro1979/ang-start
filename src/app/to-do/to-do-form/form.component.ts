@@ -11,13 +11,10 @@ import {Event} from "@angular/router";
 export class AppFormComponent {
   @Input() itemsArray?: [{content: string, isDone: boolean}?]
 
-  todoContent = ""
-
-  setToDoItem = (content: string)=>{
+  setToDoItem = (content: HTMLInputElement)=>{
     if (content){
-      this.todoContent = content
-      this.itemsArray?.push({content: content, isDone: false})
-      this.todoContent = " "
+      this.itemsArray?.push({content: content.value, isDone: false})
+      content.value = " "
     }
   }
 }
