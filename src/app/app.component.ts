@@ -5,11 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'start-project';
-  text = ""
 
-  setText = (event: Event)=>{
-    this.text = (<HTMLInputElement>event.target).value
-  }
+
+export class AppComponent {
+
 }
